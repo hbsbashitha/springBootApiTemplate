@@ -3,7 +3,8 @@ package com.bhashitha.springBootApiTemplate.entity;
 import jakarta.persistence.*;
 
 @Entity
-public class student {
+@Table(name = "student")
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
