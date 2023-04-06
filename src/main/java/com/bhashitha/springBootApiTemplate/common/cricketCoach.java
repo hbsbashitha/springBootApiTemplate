@@ -6,8 +6,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Primary
 public class cricketCoach implements coach{
+
     @Override
     public String name() {
-        return "class name is "+ getClass().getSimpleName();
+        return "cldsdsassdf name is "+ getClass().getSimpleName();
     }
 }
