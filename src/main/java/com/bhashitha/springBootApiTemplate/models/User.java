@@ -1,10 +1,10 @@
-package com.bhashitha.springBootApiTemplate.entity;
+package com.bhashitha.springBootApiTemplate.models;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "student")
-public class Student {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
