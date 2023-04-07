@@ -3,10 +3,12 @@ package com.bhashitha.springBootApiTemplate.services;
 import com.bhashitha.springBootApiTemplate.models.User;
 import com.bhashitha.springBootApiTemplate.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserServiceImpl implements UserService{
 
     private UserRepository userRepository;
