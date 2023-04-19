@@ -1,3 +1,15 @@
+package com.bhashitha.springBootApiTemplate.configs;//package com.bhashitha.springBootApiTemplate.configs;
+//
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
 //package com.bhashitha.springBootApiTemplate.configs;
 //
 //import org.springframework.context.annotation.Bean;
@@ -8,9 +20,10 @@
 //import org.springframework.security.web.SecurityFilterChain;
 //
 //import javax.sql.DataSource;
-//
-//public class securityConfig {
-//
+@Configuration
+@EnableWebSecurity
+public class securityConfig {
+
 //    // add support for JDBC ... no more hardcoded users :-)
 //    @Bean
 //    public UserDetailsManager userDetailsManager(DataSource dataSource){
@@ -23,9 +36,10 @@
 //        return jdbcUserDetailsManager;
 //
 //    }
-//
-//    @Bean
-//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 //        http.authorizeHttpRequests(
 //                confiturer->confiturer
 //                        .requestMatchers(HttpMethod.GET,"/api/v1/users").hasRole("USER")
@@ -40,8 +54,11 @@
 //
 //        // disable Cross Site Request Forgery (CSRF)
 //        // in general, not required for stateless REST APIs that use POST, PUT, DELETE and/or PATCH
-//        http.csrf().disable();
-//
-//        return http.build();
+        http.csrf().disable();
+        return http.build();
 //    }
-//}
+
+
+    }
+}
+

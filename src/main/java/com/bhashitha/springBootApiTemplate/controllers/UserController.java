@@ -19,7 +19,7 @@ public class UserController {
     public List<User> findAll(){
         return userService.findAll();
     }
-    @GetMapping("users/{userId}")
+    @GetMapping("/users/{userId}")
     public User getUser(@PathVariable Long userId){
         User theUser=userService.findById(userId);
 
@@ -29,8 +29,9 @@ public class UserController {
         return theUser;
     }
 
-    @PostMapping("users")
+    @PostMapping("/users")
     public User addUser(@RequestBody User theUser){
+        System.out.println("theUser");
         // also just in case they pass an id in JSON ... set id to 0
         // this is to force a save of new item ... instead of update
         theUser.setId(0L);
@@ -38,13 +39,13 @@ public class UserController {
         return dbUser;
     }
 
-    @PutMapping("users")
+    @PutMapping("/users")
     public User updateUser(@RequestBody User theUser){
         User dbUser=userService.save(theUser);
         return  dbUser;
     }
 
-    @DeleteMapping("users/{userId}")
+    @DeleteMapping("/users/{userId}")
     public String deleteUser(@PathVariable Long userId){
         User theUser =userService.findById(userId);
 
