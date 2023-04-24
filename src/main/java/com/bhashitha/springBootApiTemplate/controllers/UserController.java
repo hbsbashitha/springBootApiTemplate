@@ -31,16 +31,22 @@ public class UserController {
 
     @PostMapping("/users")
     public User addUser(@RequestBody User theUser){
-        System.out.println("theUser");
         // also just in case they pass an id in JSON ... set id to 0
         // this is to force a save of new item ... instead of update
         theUser.setId(0L);
+//        theUser.setPassword();
         User dbUser=userService.save(theUser);
         return dbUser;
     }
 
-    @PutMapping("/users")
-    public User updateUser(@RequestBody User theUser){
+    @PutMapping("/users/{userId}")
+    public User updateUser(@RequestBody User theUser,@PathVariable Long userId){
+//        User DbUser=userService.findById(userId);
+//        if(DbUser==null){
+//            throw new RuntimeException("User id not found -" + userId);
+//        }
+        System.out.println("ddddddd"+userId);
+        theUser.setId(userId);
         User dbUser=userService.save(theUser);
         return  dbUser;
     }
