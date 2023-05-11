@@ -1,6 +1,8 @@
 package com.bhashitha.springBootApiTemplate.utils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PasswordHashingUtils {
 
     private static final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
